@@ -23,7 +23,7 @@ window = tk.Tk()
 equation = tk.StringVar()
 greeting = tk.Label(text = "Calculator")
 greeting.pack()
-# Buttons 0-9
+
 frame = tk.Frame(master= window, width = 250, height= 250)
 frame.pack()
 expressionFrame = tk.Entry(frame, textvariable=equation)
