@@ -11,7 +11,7 @@ def equalsPress():
         global expression
         total = str(eval(expression))
         equation.set(total)
-        expression = ""
+        expression = total
     except:
         equation.set("You have made an error, try again.")
         expression = ""
@@ -21,13 +21,13 @@ def clear():
     equation.set("")
 window = tk.Tk()
 equation = tk.StringVar()
-greeting = tk.Label(text = "Calculator")
+greeting = tk.Label(text = "Calculator", font= ('Times', 30))
 greeting.pack()
 
 frame = tk.Frame(master= window, width = 250, height= 250)
 frame.pack()
-expressionFrame = tk.Entry(frame, textvariable=equation, font= ('Arial', 20))
-expressionFrame.grid(row=0,columnspan=3)
+expressionFrame = tk.Entry(frame, textvariable=equation, font= ('Arial', 25))
+expressionFrame.grid(row=0,columnspan=4)
 button1 = tk.Button(master=frame,
     text="1",
     width=15,
