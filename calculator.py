@@ -172,4 +172,12 @@ buttonCarrot = tk.Button(master=frame,
     fg="black",
     relief=tk.RAISED,command=lambda: buttonPress("**"))
 buttonCarrot.grid(row=5,column=0)
+buttonCarrot = tk.Button(master=frame,
+    text="Square Root",
+    width=15,
+    height=5,
+    bg="gray",
+    fg="black",
+    relief=tk.RAISED,comman d=lambda: buttonPress("**.5"))
+buttonCarrot.grid(row=5,column=1)
 tk.mainloop()
