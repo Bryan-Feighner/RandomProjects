@@ -1,6 +1,6 @@
 import tkinter as tk
 
-
+# Evaluation of mathematics
 expression = ""
 def buttonPress(num):
     global expression
