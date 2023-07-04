@@ -19,15 +19,17 @@ def clear():
     global expression
     expression = ""
     equation.set("")
+# Creation of visual
 window = tk.Tk()
 equation = tk.StringVar()
 greeting = tk.Label(text = "Calculator", font= ('Times', 30))
 greeting.pack()
-
+# Creating frame for buttons
 frame = tk.Frame(master= window, width = 250, height= 250)
 frame.pack()
 expressionFrame = tk.Entry(frame, textvariable=equation, font= ('Arial', 25))
 expressionFrame.grid(row=0,columnspan=4)
+# Creation of buttons
 button1 = tk.Button(master=frame,
     text="1",
     width=15,
