@@ -10,3 +10,5 @@ This script scrapes the Google search engine.  By taking a search keyword from t
 This script utilizes the tkinter library to create a simple 4 function calculator. I would like to expand this calculators capabilites later.
 ### Github Scraper
 This file is meant to pull the README file from a specified github user's repository (NOT WORKING)
+### Unit Converter
+This simple script can convert between metric and british units
