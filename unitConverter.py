@@ -1,23 +1,98 @@
 from tkinter import *
 def convert(value, type1, type2):
     global convertedValue
+    valueFloat = float(value)
     if(type1 == "Kilometers" and type2 == "Meters"):
-        convertedValue = value * 1000
+        convValue = valueFloat * 1000
     elif(type1 == "Kilometers" and type2 == "Centimeters"):
-        convertedValue = value * 1000 * 100
+        convValue = valueFloat * 1000 * 100
     elif(type1 == "Kilometers" and type2 == "Miles"):
-        convertedValue = value * .621
+        convValue = valueFloat * .621
     elif(type1 == "Kilometers" and type2 == "Yards"):
-        convertedValue = (value * .621) * 1760
+        convValue = (valueFloat * .621) * 1760
     elif(type1 == "Kilometers" and type2 == "Feet"):
-        convertedValue = (value * .621) * 5280
+        convValue = (valueFloat * .621) * 5280
     elif(type1 == "Kilometers" and type2 == "Inches"):
-        convertedValue = (value * .621) * 5280 * 12
-    convertedValue.set(convertedValue)
+        convValue = (valueFloat * .621) * 5280 * 12
+    elif(type1 == "Meters" and type2 == "Kilometers"):
+        convValue = valueFloat / 1000
+    elif(type1 == "Meters" and type2 == "Centimeters"):
+        convValue = valueFloat * 100
+    elif(type1 == "Meters" and type2 == "Miles"):
+        convValue = valueFloat * .000621
+    elif(type1 == "Meters" and type2 == "Yards"):
+        convValue = (valueFloat * 1.09361)
+    elif(type1 == "Meters" and type2 == "Feet"):
+        convValue = (valueFloat * 3.28084)
+    elif(type1 == "Meters" and type2 == "Inches"):
+        convValue = (valueFloat * 39.3701)
+    elif(type1 == "Centimeters" and type2 == "Meters"):
+        convValue = valueFloat / 100
+    elif(type1 == "Centimeters" and type2 == "Kilometers"):
+        convValue = (valueFloat / 100) / 1000
+    elif(type1 == "Centimeters" and type2 == "Miles"):
+        convValue = valueFloat * .000006213
+    elif(type1 == "Centimeters" and type2 == "Yards"):
+        convValue = (valueFloat * .01093)
+    elif(type1 == "Centimeters" and type2 == "Feet"):
+        convValue = (valueFloat * .0328)
+    elif(type1 == "Centimeters" and type2 == "Inches"):
+        convValue = (valueFloat * .3937)
+    elif(type1 == "Miles" and type2 == "Meters"):
+        convValue = valueFloat * 1609.34
+    elif(type1 == "Miles" and type2 == "Centimeters"):
+        convValue = valueFloat * 160934
+    elif(type1 == "Miles" and type2 == "Kilometers"):
+        convValue = valueFloat * 1.60634
+    elif(type1 == "Miles" and type2 == "Yards"):
+        convValue = (valueFloat * 1760)
+    elif(type1 == "Miles" and type2 == "Feet"):
+        convValue = (valueFloat * 1760) * 3
+    elif(type1 == "Miles" and type2 == "Inches"):
+        convValue = (valueFloat * 1760) * 3 * 12
+    elif(type1 == "Yards" and type2 == "Meters"):
+        convValue = valueFloat * .9144
+    elif(type1 == "Yards" and type2 == "Centimeters"):
+        convValue = valueFloat * 91.44
+    elif(type1 == "Yards" and type2 == "Miles"):
+        convValue = valueFloat / 1760
+    elif(type1 == "Yards" and type2 == "Kilometers"):
+        convValue = (valueFloat * .0009144)
+    elif(type1 == "Yards" and type2 == "Feet"):
+        convValue = (valueFloat * 3)
+    elif(type1 == "Yards" and type2 == "Inches"):
+        convValue = (valueFloat * 3) * 12
+    elif(type1 == "Feet" and type2 == "Meters"):
+        convValue = valueFloat * .3048
+    elif(type1 == "Feet" and type2 == "Centimeters"):
+        convValue = valueFloat * 30.48
+    elif(type1 == "Feet" and type2 == "Miles"):
+        convValue = valueFloat / 5280
+    elif(type1 == "Feet" and type2 == "Yards"):
+        convValue = (valueFloat / 3)
+    elif(type1 == "Feet" and type2 == "Kilometers"):
+        convValue = (valueFloat * .0003048)
+    elif(type1 == "Feet" and type2 == "Inches"):
+        convValue = (valueFloat * 12)
+    elif(type1 == "Inches" and type2 == "Meters"):
+        convValue = valueFloat / 39.37
+    elif(type1 == "Inches" and type2 == "Centimeters"):
+        convValue = valueFloat * 2.54
+    elif(type1 == "Inches" and type2 == "Miles"):
+        convValue = valueFloat / 63360
+    elif(type1 == "Inches" and type2 == "Yards"):
+        convValue = (valueFloat / 36)
+    elif(type1 == "Inches" and type2 == "Feet"):
+        convValue = (valueFloat / 12)
+    elif(type1 == "Inches" and type2 == "Kilometers"):
+        convValue = (valueFloat * .0000254)
+    convertedValue.set(convValue)
 window = Tk()
 value = StringVar()
 metric1 = StringVar()
 metric2 = StringVar()
+metric1.set("Kilometers")
+metric2.set("Meters")
 convertedValue = StringVar()
 greeting = Label(text ="Unit Converter", font = ('Times', 30))
 greeting.pack()
@@ -47,11 +122,11 @@ dropdown2 = OptionMenu(frame, metric2, *options)
 dropdown2.grid(row = 1, column= 5)
 buttonConv = Button(master=frame,
     text="Convert",
-    width=15,
+    width=45,
     height=5,
     bg="gray",
     fg="white",
-    relief=RAISED,command=lambda: convert(value, metric1, metric2))
-buttonConv.grid(row = 3, column= 2)
+    relief=RAISED,command=lambda: convert(value.get(), metric1.get(), metric2.get()))
+buttonConv.grid(row = 3, column= 1, columnspan= 4)
 
 mainloop()
