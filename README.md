@@ -1,5 +1,12 @@
 # RandomProjects
 Collection of random coding projects
+
+## Prerequisite downloads:
+Several different libraries are used in this repo; tkinter and BeautifulSoup4. To download these, these 2 commands can be run on the command line
+
+`pip install bs4`
+
+`pip install tkinter`
 ### Basic Web Scraper
 This simple program takes the URL of a webpage and returns the HTML source
 ### Google Scraper
