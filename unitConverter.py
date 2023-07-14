@@ -87,6 +87,10 @@ def convert(value, type1, type2):
         convValue = (valueFloat / 12)
     elif(type1 == "Inches" and type2 == "Kilometers"):
         convValue = (valueFloat * .0000254)
+    elif(type1 == "Fahrenheit" and type2 == "Celsius"):
+        convValue = (valueFloat - 32) * (5/9)
+    elif(type1 == "Celsius" and type2 == "Fahrenheit"):
+        convValue = (valueFloat * (9/5)) + 32
     convertedValue.set(convValue)
 # Create master frame
 window = Tk()
@@ -122,6 +126,8 @@ options = [
     "Yards",
     "Feet",
     "Inches",
+    "Fahrenheit",
+    "Celsius"
 ]
 # Create drop down menu's 
 dropdown1 = OptionMenu(frame, metric1, *options)
