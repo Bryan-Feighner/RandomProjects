@@ -87,6 +87,7 @@ def convert(value, type1, type2):
         convValue = (valueFloat / 12)
     elif(type1 == "Inches" and type2 == "Kilometers"):
         convValue = (valueFloat * .0000254)
+# Temperature conversion
     elif(type1 == "Fahrenheit" and type2 == "Celsius"):
         convValue = (valueFloat - 32) * (5/9)
     elif(type1 == "Celsius" and type2 == "Fahrenheit"):
