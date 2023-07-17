@@ -18,4 +18,4 @@ This script utilizes the tkinter library to create a simple 4 function calculato
 ### Github Scraper
 This file is meant to pull the README file from a specified github user's repository (NOT WORKING)
 ### Unit Converter
-This simple script can convert between metric and british units
+This simple script can convert between metric and british units. I plan to expand this script to convert many more types of units. 
