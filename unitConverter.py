@@ -92,6 +92,11 @@ def convert(value, type1, type2):
         convValue = (valueFloat - 32) * (5/9)
     elif(type1 == "Celsius" and type2 == "Fahrenheit"):
         convValue = (valueFloat * (9/5)) + 32
+# Adding 3D converiond 
+    elif(type1 == "Square Kilometers" and type2 == "Square Miles"):
+        convValue = (valueFloat - 32) * (5/9)
+    elif(type1 == "Celsius" and type2 == "Fahrenheit"):
+        convValue = (valueFloat * (9/5)) + 32
     convertedValue.set(convValue)
 # Create master frame
 window = Tk()
