@@ -99,6 +99,7 @@ def convert(value, type1, type2):
         convValue = (valueFloat / 2.58999)
     elif(type1 == "Square Miles" and type2 == "Square Kilometers"):
         convValue = (valueFloat * 2.58999)
+# Setting display value to calculated value
     convertedValue.set(convValue)
 # Create master frame
 window = Tk(className= "Unit converter")
