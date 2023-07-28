@@ -94,7 +94,7 @@ def convert(value, type1, type2):
         convValue = (valueFloat - 32) * (5/9)
     elif(type1 == "Celsius" and type2 == "Fahrenheit"):
         convValue = (valueFloat * (9/5)) + 32
-# Adding 3D conversions
+# Adding 3D conversions (meter/yard through km/m)
     elif(type1 == "Square Kilometers" and type2 == "Square Miles"):
         convValue = (valueFloat / 2.58999)
     elif(type1 == "Square Miles" and type2 == "Square Kilometers"):
