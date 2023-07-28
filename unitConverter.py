@@ -87,6 +87,7 @@ def convert(value, type1, type2):
         convValue = (valueFloat / 12)
     elif(type1 == "Inches" and type2 == "Kilometers"):
         convValue = (valueFloat * .0000254)
+# Convert to same unit
     elif(type1 == type2):
         convValue = valueFloat
 # Temperature conversion
