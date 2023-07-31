@@ -99,6 +99,26 @@ def convert(value, type1, type2):
         convValue = (valueFloat / 2.58999)
     elif(type1 == "Square Miles" and type2 == "Square Kilometers"):
         convValue = (valueFloat * 2.58999)
+    elif(type1 == "Square Miles" and type2 == "Square Feet"):
+        convValue = (valueFloat * 27878399.9963)
+    elif(type1 == "Square Feet" and type2 == "Square Miles"):
+        convValue = (valueFloat / 27878399.9963)
+    elif(type1 == "Square Kilometers" and type2 == "Square Feet"):
+        convValue = (valueFloat * 10763910.41671)
+    elif(type1 == "Square Miles" and type2 == "Square Meters"):
+        convValue = (valueFloat * 2589988.1)
+    elif(type1 == "Square Meters" and type2 == "Square Miles"):
+        convValue = (valueFloat / 2589988.1)
+    elif(type1 == "Square Feet" and type2 == "Square Kilometers"):
+         convValue = (valueFloat / 10763910.41671)
+    elif(type1 == "Square Meters" and type2 == "Square Feet"):
+        convValue = (valueFloat * 10.76391)
+    elif(type1 == "Square Feet" and type2 == "Square Meters"):
+        convValue = (valueFloat / 10.76391)
+    elif(type1 == "Square Meters" and type2 == "Square Kilometers"):
+        convValue = (valueFloat / 100000)
+    elif(type1 == "Square Kilometers" and type2 == "Square Meters"):
+        convValue = (valueFloat * 100000)
     convertedValue.set(convValue)
 # Create master frame
 window = Tk(className= "Unit converter")
@@ -138,7 +158,9 @@ options = [
     "Fahrenheit",
     "Celsius",
     "Square Miles",
-    "Square Kilometers"
+    "Square Kilometers",
+    "Square Meters",
+    "Square Feet"
 ]
 # Create drop down menu's 
 dropdown1 = OptionMenu(frame, metric1, *options)
