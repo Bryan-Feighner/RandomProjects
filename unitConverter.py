@@ -1,8 +1,11 @@
 from tkinter import *
 # Unit Conversion Math
 def convert(value, type1, type2):
+# Pull global value into function
     global convertedValue
+# Set input value to type float
     valueFloat = float(value)
+# 2D conversions
     if(type1 == "Kilometers" and type2 == "Meters"):
         convValue = valueFloat * 1000
     elif(type1 == "Kilometers" and type2 == "Centimeters"):
@@ -127,7 +130,7 @@ window = Tk(className= "Unit converter")
 window.configure(bg= 'gray')
 # Create variables and set labels for metrics
 value = StringVar()
-metric1 = StringVar()
+metric1 = StringVar()*
 metric2 = StringVar()
 metric1.set("Unit to be Converted")
 metric2.set("Desired Unit")
