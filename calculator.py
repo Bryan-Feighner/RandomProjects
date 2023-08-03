@@ -20,7 +20,7 @@ def clear():
     expression = ""
     equation.set("")
 # Creation of visual
-window = tk.Tk()
+window = tk.Tk(className= "Calculator")
 equation = tk.StringVar()
 greeting = tk.Label(text = "Calculator", font= ('Times', 30))
 greeting.pack()
