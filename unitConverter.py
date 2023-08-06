@@ -127,29 +127,29 @@ def convert(value, type1, type2):
     convertedValue.set(convValue)
 # Create master frame
 window = Tk(className= "Unit converter")
-window.configure(bg= 'gray')
+window.configure(bg= 'light blue')
 # Create variables and set labels for metrics
 value = StringVar()
-metric1 = StringVar()*
+metric1 = StringVar()
 metric2 = StringVar()
 metric1.set("Unit to be Converted")
 metric2.set("Desired Unit")
 convertedValue = StringVar()
 # Create greeting title
-greeting = Label(text ="Unit Converter", font = ('Times', 30), bg= 'gray')
+greeting = Label(text ="Unit Converter", font = ('Times', 30), bg= 'light blue')
 greeting.pack()
 # Create subframe into which all buttons and text boxes will be placed
-frame = Frame(master= window, width = 250, height= 250, bg='gray')
+frame = Frame(master= window, width = 250, height= 250, bg='light blue')
 frame.pack()
 # Create and place text boxes
-expressionFrame1 = Entry(frame, textvariable=value, font= ('Arial', 25))
+expressionFrame1 = Entry(frame, textvariable=value, font= ('Arial', 25), relief = SUNKEN)
 expressionFrame1.grid(row=0,columnspan=4)
-expressionFrame2 = Entry(frame, textvariable=convertedValue, font= ('Arial', 25))
+expressionFrame2 = Entry(frame, textvariable=convertedValue, font= ('Arial', 25), relief = SUNKEN)
 expressionFrame2.grid(row=1,columnspan=4)
 # Create labels for selected unit
-metricChosen1 = Label(frame, textvariable=metric1, font= ('Arial', 25), bg='gray')
+metricChosen1 = Label(frame, textvariable=metric1, font= ('Arial', 25), bg='light blue', relief= FLAT)
 metricChosen1.grid(row=0,column = 4,columnspan=1)
-metricChosen2 = Label(frame, textvariable=metric2, font= ('Arial', 25), bg='gray')
+metricChosen2 = Label(frame, textvariable=metric2, font= ('Arial', 25), bg='light blue', relief= FLAT)
 metricChosen2.grid(row=1,column = 4,columnspan=1)
 # Create array of units for drop down menus
 options = [
@@ -168,7 +168,7 @@ options = [
     "Square Feet"
 ]
 # Create drop down menu's 
-dropdown1 = OptionMenu(frame, metric1, *options)
+dropdown1 = OptionMenu(frame, metric1, *options, )
 dropdown1.grid(row = 0, column=5)
 dropdown2 = OptionMenu(frame, metric2, *options)
 dropdown2.grid(row = 1, column= 5)
@@ -177,8 +177,8 @@ buttonConv = Button(master=frame,
     text="Convert",
     width=100,
     height=5,
-    bg="gray",
-    fg="white",
+    bg="light blue",
+    fg="black",
     relief=RAISED,
     command=lambda: convert(value.get(), metric1.get(), metric2.get()),
     )
